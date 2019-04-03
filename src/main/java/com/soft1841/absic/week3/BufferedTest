@@ -1,0 +1,48 @@
+package com.soft1841.io;
+
+import java.io.*;
+import java.io.File;
+
+/**
+ * @author wanghuan le
+ * 2019.04.04
+ */
+public class BufferedTest {
+    public static void main(String[] args) {
+        //定义字符串数组
+        String content[] = {"你不喜欢我","我一点都不介意","因为我活下来","不是为了取悦你"};
+        //分别创建几种所需要的对象
+        java.io.File file = new File("word.txt");
+        try{
+            //实例化FileOutStream对象
+            FileWriter fileWriter = new FileWriter(file);
+            //实例化BufferedOutputStrem对象
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter) ;
+            //遍历循环数组
+            for(int k = 0; k < content.length; k++){
+                bufferedWriter.write(content[k]);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
+        try{
+            FileReader fr = new FileReader(file);
+            BufferedReader bufr = new BufferedReader(fr);
+            String s = null;
+            int i = 0;
+            while((s = bufr.readLine()) != null) {
+                i++;
+                System.out.println("第" + i+ "行" + s);
+            }
+            bufr.close();
+            fr.close();
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
