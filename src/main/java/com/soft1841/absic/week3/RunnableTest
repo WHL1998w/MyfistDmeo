@@ -1,0 +1,30 @@
+package com.soft1841.multithreading;
+
+public class RunnableTest {
+    //声明线程对象
+    private static Thread t;
+
+public RunnableTest(){
+    //2.使用参数为Runnable对象构造方法创建Thread对象(子类对象为Roll)
+    t = new Thread(new Roll());
+    //3.启动线程
+    t.start();
+}
+//定义内部类，实现Runnable接口
+class Roll implements Runnable {
+    //实现功能
+    private int cot = 10;
+    public void run() {
+        while (true) {
+            System.out.print(cot + "  ");
+            if (--cot == 0) {
+                break;
+            }
+        }
+    }
+}
+public static void main(String[] args) {
+    //1.实例化一个RunableTest对象
+    new RunnableTest();
+    }
+}
