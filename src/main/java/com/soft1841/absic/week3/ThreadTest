@@ -1,0 +1,18 @@
+package com.soft1841.multithreading;
+
+public class ThreadTest extends Thread {
+    private int cot = 10;
+    public void run(){
+        while(true){
+            System.out.print(cot + "  ");
+            if(--cot == 0){
+                break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ThreadTest test = new ThreadTest();
+        test.start();
+    }
+}
