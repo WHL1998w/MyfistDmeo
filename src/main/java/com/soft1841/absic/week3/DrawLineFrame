@@ -1,0 +1,29 @@
+package com.soft1841.runnable;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class DrawLineGrame extends JFrame {
+    public DrawLineGrame(){
+        init();
+        setTitle("绘制彩色线段");
+        setSize(1000,600);
+        //窗体居中显示
+        setLocationRelativeTo(null);
+        setResizable(false);
+        //窗体可见
+        setVisible(true);
+        //关闭方式
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+    private void init(){
+        getContentPane().setBackground(new Color(0,9,0));
+        DrawLineThread drawLineThread = new DrawLineThread();
+        drawLineThread.setFrame(this);
+        new Thread(drawLineThread).start();
+    }
+
+    public static void main(String[] args) {
+        new DrawLineGrame();
+    }
+}
