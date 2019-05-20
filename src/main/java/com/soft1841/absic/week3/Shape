@@ -1,0 +1,5 @@
+package com.soft1841.factory;
+
+public interface Shape {
+    void draw();
+}
