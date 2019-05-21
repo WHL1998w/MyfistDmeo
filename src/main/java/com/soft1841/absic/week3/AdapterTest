@@ -1,0 +1,37 @@
+package com.soft1841.adapter;
+/**
+ * Student测试类
+ * @author wanghuanle
+ * 2019.05.22
+ */
+public class AdapterTest {
+    public static void main(String[] args) {
+        System.out.println("学霸招募中：");
+        Student student1 = new Student() {
+            @Override
+            public void javaStudy() {
+                System.out.println("我是一位Java大神！");
+            }
+
+            @Override
+            public void mathStudy() {
+                System.out.println("我的数学也很溜！");
+            }
+        };
+        student1.javaStudy();
+        Student student2 = new Student() {
+            @Override
+            public void playBasketball() {
+                System.out.println("我喜欢打篮球。");
+            }
+
+            @Override
+            public void playFootball() {
+                System.out.println("我也喜欢踢足球。");
+            }
+        };
+        student2.playBasketball();
+        student2.playFootball();
+    }
+}
+
