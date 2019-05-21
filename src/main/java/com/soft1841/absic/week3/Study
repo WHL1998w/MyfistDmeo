@@ -1,0 +1,11 @@
+package com.soft1841.adapter;
+
+/**
+ * Study接口
+ * @author wanghuanle 
+ * 2019.05.22
+ */
+public interface Study {
+    void javaStudy();
+    void mathStudy();
+}
