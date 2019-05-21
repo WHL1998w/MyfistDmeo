@@ -1,0 +1,27 @@
+package com.soft1841.adapter;
+/**
+ * Student实现类
+ * @author wanghuanle
+ * 2019.05.22
+ */
+public abstract class Student implements Study,Sports {
+    @Override
+    public void playBasketball() {
+
+    }
+
+    @Override
+    public void playFootball() {
+
+    }
+
+    @Override
+    public void javaStudy() {
+
+    }
+
+    @Override
+    public void mathStudy() {
+
+    }
+}
