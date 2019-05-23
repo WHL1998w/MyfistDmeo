@@ -1,0 +1,11 @@
+package com.soft1841.decorator;
+
+/**
+ * 记录日志的接口
+ * @author wanghuan le
+ * 2019.05.24
+ */
+public interface Logger {
+    //声明日志的输出方法
+    void log(String message);
+}
