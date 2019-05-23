@@ -1,0 +1,24 @@
+package com.soft1841.decorator;
+/**
+ * 为Logger编写一个装饰器，在输出日志之后输出当前时间，
+ * 这个装饰类要实现Logger接口并且拥有一个Logger
+ * @author wanghuan le
+ * 2019.05.24
+ */
+
+import java.util.Calendar;
+
+public class TimeLoggerDecorator implements Logger {
+    private Logger decoratorLogger;
+    public TimeLoggerDecorator(Logger decoratorLogger){
+        this.decoratorLogger = decoratorLogger;
+    }
+    @Override
+    public void log(String message) {
+        decoratorLogger.log(message);
+        logTime();
+    }
+    public void logTime(){
+        System.out.println(Calendar.getInstance().getTime());
+    }
+}
